@@ -1,2 +1,2 @@
 # Champs3
-A Gamified Onchain Growth Platform
+A Gamified On-chain Growth Platform
