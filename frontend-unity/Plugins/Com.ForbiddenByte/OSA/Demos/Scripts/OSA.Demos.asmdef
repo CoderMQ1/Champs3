@@ -1,0 +1,19 @@
+{
+    "name": "OSA.Demos",
+    "rootNamespace": "",
+    "references": [
+        "OSA.Core",
+        "OSA.Utilities"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [
+        "WebGL"
+    ],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
