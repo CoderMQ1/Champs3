@@ -10,7 +10,7 @@ abstract contract ERC20Interface {
   function transferFrom(address from, address to, uint tokens)  public virtual;
 }
 
-abstract contract RunXHeroInterface {
+abstract contract HeroInterface {
   function mint(address to, uint256 tokenid)  public virtual;
   function fulfillAttr(uint256 tokenid, uint256 rarity, uint256 talent,uint256 RunningSpeed,uint256 SwimmingSpeed,uint256 ClimbingSpeed,uint256 FlightSpeed,uint256 energy) public virtual;
   function getCurrentSupply() public virtual view returns(uint256);
@@ -20,7 +20,7 @@ abstract contract AssetInterface{
     function addAsset(address user,uint256 itemId,uint256 amount) public virtual ;
 }
 
-contract RunXHeroOperator is Ownable, Pausable, ReentrancyGuard, VRFConsumerBaseV2{
+contract HeroOperator is Ownable, Pausable, ReentrancyGuard, VRFConsumerBaseV2{
     using AddressUtils for address;
     
     event RequestSent(uint256 requestId, uint32 numWords);
@@ -55,7 +55,7 @@ contract RunXHeroOperator is Ownable, Pausable, ReentrancyGuard, VRFConsumerBase
 
     ERC20Interface  public _USDT;
     ERC20Interface  public _RTC;
-    RunXHeroInterface public _NFT;
+    HeroInterface public _NFT;
     AssetInterface public _ASSET;
 
     uint256 public _priceInUSDT = 0;
@@ -112,7 +112,7 @@ contract RunXHeroOperator is Ownable, Pausable, ReentrancyGuard, VRFConsumerBase
     function configMint(address nft, uint256 rarity1Supply, uint256 rarity2Supply, uint256 rarity3Supply, uint256 rarity4Supply, uint256 rarity5Supply, uint256 whitelistSupply) onlyOwner external{
         require(nft.isContract(), "The nftContract Address should be a contract");
         
-        _NFT = RunXHeroInterface(nft);
+        _NFT = HeroInterface(nft);
         _rarity1Supply = rarity1Supply;
         _rarity2Supply = rarity2Supply;
         _rarity3Supply = rarity3Supply;

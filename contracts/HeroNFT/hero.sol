@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-contract RunXHero is Ownable, ERC721Pausable {
+contract HeroNFT is Ownable, ERC721Pausable {
     using Strings for uint256;
 
     struct Attr{
@@ -26,7 +26,7 @@ contract RunXHero is Ownable, ERC721Pausable {
     
     uint256 public _currentSupply;
     
-    string public baseURI = "https://resource.runx.xyz/runxheronft/metadata_";
+    string public baseURI = "https://resource.champs3.io/heronft/metadata_";
 
     mapping(address => bool) internal _operators;
     
