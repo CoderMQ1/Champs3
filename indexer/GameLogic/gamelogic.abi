@@ -1,0 +1,607 @@
+[
+		{
+			"inputs": [],
+			"stateMutability": "nonpayable",
+			"type": "constructor"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "owner",
+					"type": "address"
+				}
+			],
+			"name": "OwnableInvalidOwner",
+			"type": "error"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "account",
+					"type": "address"
+				}
+			],
+			"name": "OwnableUnauthorizedAccount",
+			"type": "error"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "roomId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "player",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "rank",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "itemId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "GameSettleLog",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "roomId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "player",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "targetNum",
+					"type": "uint256"
+				}
+			],
+			"name": "MatchProgress",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "roomId",
+					"type": "uint256"
+				}
+			],
+			"name": "MatchSuccess",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "previousOwner",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "OwnershipTransferred",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "pvpFee",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "updateTime",
+					"type": "uint256"
+				}
+			],
+			"name": "PvpFeeUpdate",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "player",
+					"type": "address"
+				}
+			],
+			"name": "StartPvpGameLog",
+			"type": "event"
+		},
+		{
+			"inputs": [],
+			"name": "LastUpdatePvpFeeTime",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "LuckSpinRewardPumps",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "MineAcumulate",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "MineProportion",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "CompetitiveProportion",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "PvpFee",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "exchangeEnergy",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "gameAsset",
+			"outputs": [
+				{
+					"internalType": "contract GameAssetInterface",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "gameConfig",
+			"outputs": [
+				{
+					"internalType": "contract GameConfigInterface",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "gameData",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "NftRoleContract",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "GameConfigContract",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "HeroTokenContract",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "SpinContract",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "GameAssetContract",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "SpinCostItemId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "BatteryItemId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "PvpConsumeItemId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "HeroTokenItemId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "PlayerNum",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "gameRoom",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "RoomId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "BlockNum",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "heroToken",
+			"outputs": [
+				{
+					"internalType": "contract HeroTokenInterface",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				}
+			],
+			"name": "isAdmin",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "owner",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "renounceOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "roleNft",
+			"outputs": [
+				{
+					"internalType": "contract RoleNftInterface",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "tokenId",
+					"type": "uint256"
+				}
+			],
+			"name": "roleUpgrade",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				},
+				{
+					"internalType": "bool",
+					"name": "enabled",
+					"type": "bool"
+				}
+			],
+			"name": "setAdmin",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "gameAssetContract",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "batteryItemId",
+					"type": "uint256"
+				}
+			],
+			"name": "setAssetContract",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "gameConfigContract",
+					"type": "address"
+				}
+			],
+			"name": "setGameData",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "roomId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "gameMode",
+					"type": "uint256"
+				},
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "Addr",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "UsedItemId",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "NftId",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct SettlePlayerInfo[]",
+					"name": "settleInfos",
+					"type": "tuple[]"
+				}
+			],
+			"name": "settle",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "roomId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "gameMode",
+					"type": "uint256"
+				},
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "Addr",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "UsedItemId",
+							"type": "uint256"
+						},
+						{
+							"internalType": "uint256",
+							"name": "NftId",
+							"type": "uint256"
+						}
+					],
+					"internalType": "struct SettlePlayerInfo[]",
+					"name": "settleInfos",
+					"type": "tuple[]"
+				},
+				{
+					"internalType": "uint256",
+					"name": "step",
+					"type": "uint256"
+				}
+			],
+			"name": "settleTest",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "spin",
+			"outputs": [
+				{
+					"internalType": "contract SpinInterface",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "startPvpGame",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "newOwner",
+					"type": "address"
+				}
+			],
+			"name": "transferOwnership",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "upgradeInfo",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "PayTokenContract",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "upgradePayToken",
+			"outputs": [
+				{
+					"internalType": "contract ERC20Interface",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+]

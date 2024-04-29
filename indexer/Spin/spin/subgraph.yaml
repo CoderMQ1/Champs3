@@ -1,0 +1,30 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: spin
+    network: tbnb
+    source:
+      address: ""
+      abi: spin
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - RequestFulfilled
+        - RequestSent
+        - spinResult
+      abis:
+        - name: spin
+          file: ./abis/spin.json
+      eventHandlers:
+        - event: RequestFulfilled(uint256,uint256[],uint256)
+          handler: handleRequestFulfilled
+        - event: RequestSent(uint256,uint32)
+          handler: handleRequestSent
+        - event: spinResult(uint256,address,uint256,uint256,uint256,uint256,uint256)
+          handler: handlespinResult
+      file: ./src/spin.ts

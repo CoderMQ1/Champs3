@@ -1,0 +1,478 @@
+[
+		{
+			"inputs": [],
+			"stateMutability": "nonpayable",
+			"type": "constructor"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256[]",
+					"name": "randomWords",
+					"type": "uint256[]"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "payment",
+					"type": "uint256"
+				}
+			],
+			"name": "RequestFulfilled",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint32",
+					"name": "numWords",
+					"type": "uint32"
+				}
+			],
+			"name": "RequestSent",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "spinId",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "address",
+					"name": "player",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "random",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "rewardID",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "rewardNum",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "bonusPool",
+					"type": "uint256"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "jackpot",
+					"type": "uint256"
+				}
+			],
+			"name": "spinResult",
+			"type": "event"
+		},
+		{
+			"inputs": [],
+			"name": "BonusPool",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "GameAsset",
+			"outputs": [
+				{
+					"internalType": "contract GameAssetInterface",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "GameConfig",
+			"outputs": [
+				{
+					"internalType": "contract GameConfigInterface",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "HeroToken",
+			"outputs": [
+				{
+					"internalType": "contract HeroTokenInterface",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "JackId",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "JackPot",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "SpinCostItemId",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "SpinRewards",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "BlockSort",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "MustTimes",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "Weight",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "CostPoolNum",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "RewardEffect",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "RewardType",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "RewardID",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "RewardNum",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "SpinTotalTimes",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "TotalWeight",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "amount",
+					"type": "uint256"
+				}
+			],
+			"name": "addBonusPool",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "spinId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "player",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "vrf",
+					"type": "uint256"
+				}
+			],
+			"name": "doSpin",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "_requestId",
+					"type": "uint256"
+				}
+			],
+			"name": "getRequestStatus",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "randomWords",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				}
+			],
+			"name": "isAdmin",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "gameConfigContract",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "gameAssetContract",
+					"type": "address"
+				},
+				{
+					"internalType": "address",
+					"name": "heroTokenContract",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "spinCostItemId",
+					"type": "uint256"
+				}
+			],
+			"name": "loadLuckSpinSet",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "owner",
+			"outputs": [
+				{
+					"internalType": "address",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "_requestId",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256[]",
+					"name": "_randomWords",
+					"type": "uint256[]"
+				}
+			],
+			"name": "rawFulfillRandomWords",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "spinId",
+					"type": "uint256"
+				}
+			],
+			"name": "requestRandomWords",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "requestId",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"name": "s_requests",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "paid",
+					"type": "uint256"
+				},
+				{
+					"internalType": "bool",
+					"name": "fulfilled",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
+				},
+				{
+					"internalType": "bool",
+					"name": "enabled",
+					"type": "bool"
+				}
+			],
+			"name": "setAdmin",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "spinSetInit",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+]

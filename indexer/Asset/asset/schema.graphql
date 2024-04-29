@@ -1,0 +1,27 @@
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type assetChange @entity(immutable: true) {
+  id: Bytes!
+  player: Bytes! # address
+  itemId: BigInt! # uint256
+  amount: BigInt! # uint256
+  addOrMinus: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type assetTable @entity(immutable: false) {
+  id: Bytes!
+  player: Bytes! # address
+  itemId: BigInt! # uint256
+  amount: BigInt! # uint256
+  updateTimestamp: BigInt!
+}

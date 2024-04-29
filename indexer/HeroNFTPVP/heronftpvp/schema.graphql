@@ -1,0 +1,77 @@
+type ExampleEntity @entity {
+  id: Bytes!
+  count: BigInt!
+  owner: Bytes! # address
+  approved: Bytes! # address
+}
+
+type mintTable @entity {
+  id: ID!
+  tokenid: BigInt!
+  rarity: BigInt!
+  level: BigInt!
+  talent: BigInt!
+  RunningSpeed: BigInt!
+  SwimmingSpeed: BigInt!
+  ClimbingSpeed: BigInt!
+  FlightSpeed: BigInt!
+  energy: BigInt!
+  time: BigInt!
+  owner: Bytes! # address
+  contract: Bytes! # address
+}
+
+type ownerTable @entity {
+  id: ID!
+  tokenid: BigInt!
+  rarity: BigInt!
+  level: BigInt!
+  talent: BigInt!
+  RunningSpeed: BigInt!
+  SwimmingSpeed: BigInt!
+  ClimbingSpeed: BigInt!
+  FlightSpeed: BigInt!
+  energy: BigInt!
+  owner: Bytes! # address
+  contract: Bytes! # address
+  upgradeBlockNumber: BigInt!
+}
+
+type historyTable @entity {
+  id: ID!
+  tokenid: BigInt!
+  contract: Bytes! # address
+  from: Bytes! # address
+  to: Bytes! # address
+  transfercount: BigInt!
+  time: BigInt!
+}
+
+type consumeTable @entity {
+  id: ID!
+  from: Bytes! # address
+  tokenid: BigInt!
+}
+
+type upgradeTable @entity {
+  id: ID!
+  tokenid: BigInt!
+  level: BigInt!
+  runningSpeed: BigInt!
+  swimmingSpeed: BigInt!
+  flightSpeed: BigInt!
+  climbingSpeed: BigInt!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type approveGameTable @entity {
+  id: Bytes!
+  playerAddr: Bytes! # address
+  en: Boolean! # bool
+  lastApproveTime: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

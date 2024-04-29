@@ -1,0 +1,39 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: herobox
+    network: tbnb
+    source:
+      address: ""
+      abi: herobox
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - InviteReward
+        - OwnershipTransferred
+        - Paused
+        - RequestFulfilled
+        - RequestSent
+        - Unpaused
+      abis:
+        - name: herobox
+          file: ./abis/herobox.json
+      eventHandlers:
+        - event: InviteReward(address,address,uint256)
+          handler: handleInviteReward
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: Paused(address)
+          handler: handlePaused
+        - event: RequestFulfilled(uint256,uint256[])
+          handler: handleRequestFulfilled
+        - event: RequestSent(uint256,uint32)
+          handler: handleRequestSent
+        - event: Unpaused(address)
+          handler: handleUnpaused
+      file: ./src/herobox.ts

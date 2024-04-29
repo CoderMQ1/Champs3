@@ -1,0 +1,18 @@
+{
+  "name": "token-dev",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node http://127.0.0.1:8020 mumbai/token-dev",
+    "create-local": "graph create --node http://localhost:8020/ mumbai/token-dev",
+    "remove-local": "graph remove --node http://localhost:8020/ mumbai/token-dev",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 mumbai/token-dev",
+    "test": "graph test"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.62.0",
+    "@graphprotocol/graph-ts": "0.30.0"
+  },
+  "devDependencies": { "matchstick-as": "0.5.0" }
+}

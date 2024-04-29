@@ -1,0 +1,32 @@
+type RequestFulfilled @entity(immutable: true) {
+  id: Bytes!
+  requestId: BigInt! # uint256
+  randomWords: [BigInt!]! # uint256[]
+  payment: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type RequestSent @entity(immutable: true) {
+  id: Bytes!
+  requestId: BigInt! # uint256
+  numWords: BigInt! # uint32
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type spinResult @entity(immutable: true) {
+  id: Bytes!
+  spinId: BigInt! # uint256
+  player: Bytes! # address
+  random: BigInt! # uint256
+  rewardID: BigInt! # uint256
+  rewardNum: BigInt! # uint256
+  bonusPool: BigInt! # uint256
+  jackpot: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

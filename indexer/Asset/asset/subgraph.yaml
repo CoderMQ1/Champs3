@@ -1,0 +1,27 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: asset
+    network: tbnb
+    source:
+      address: ""
+      abi: asset
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - OwnershipTransferred
+        - assetChange
+      abis:
+        - name: asset
+          file: ./abis/asset.json
+      eventHandlers:
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: assetChange(address,uint256,uint256,uint256)
+          handler: handleassetChange
+      file: ./src/asset.ts

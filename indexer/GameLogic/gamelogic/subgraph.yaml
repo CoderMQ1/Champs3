@@ -1,0 +1,39 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: gamelogic
+    network: tbnb
+    source:
+      address: ""
+      abi: gamelogic
+      startBlock: 0
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - GameSettleLog
+        - MatchProgress
+        - MatchSuccess
+        - OwnershipTransferred
+        - PvpFeeUpdate
+        - StartPvpGameLog
+      abis:
+        - name: gamelogic
+          file: ./abis/gamelogic.json
+      eventHandlers:
+        - event: GameSettleLog(uint256,address,uint256,uint256,uint256)
+          handler: handleGameSettleLog
+        - event: MatchProgress(uint256,address,uint256,uint256)
+          handler: handleMatchProgress
+        - event: MatchSuccess(uint256)
+          handler: handleMatchSuccess
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: PvpFeeUpdate(uint256,uint256)
+          handler: handlePvpFeeUpdate
+        - event: StartPvpGameLog(address)
+          handler: handleStartPvpGameLog
+      file: ./src/gamelogic.ts

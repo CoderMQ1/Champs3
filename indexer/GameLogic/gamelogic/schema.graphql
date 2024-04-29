@@ -1,0 +1,56 @@
+type GameSettleLog @entity(immutable: true) {
+  id: Bytes!
+  roomId: BigInt! # uint256
+  player: Bytes! # address
+  rank: BigInt! # uint256
+  itemId: BigInt! # uint256
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MatchProgress @entity(immutable: true) {
+  id: Bytes!
+  roomId: BigInt! # uint256
+  player: Bytes! # address
+  tokenId: BigInt! # uint256
+  targetNum: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type MatchSuccess @entity(immutable: true) {
+  id: Bytes!
+  roomId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PvpFeeUpdate @entity(immutable: true) {
+  id: Bytes!
+  pvpFee: BigInt! # uint256
+  updateTime: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type StartPvpGameLog @entity(immutable: true) {
+  id: Bytes!
+  player: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
