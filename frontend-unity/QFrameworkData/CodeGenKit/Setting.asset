@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824e9ce8d0ab4fee90ebfb81f09cdeaf, type: 3}
   m_Name: Setting
   m_EditorClassIdentifier: 
-  Namespace: SquareHero.Hotfix
-  ScriptDir: Assets/Scripts/SquareHero/Hotfix/
+  Namespace: Champs3.Hotfix
+  ScriptDir: Assets/Scripts/Champs3/Hotfix/
   PrefabDir: Assets/Bundles/Prefabs

@@ -13,7 +13,7 @@ using UnityEngine;
 using OfficeOpenXml;
 using QFramework;
 using Sirenix.Utilities.Editor;
-using SquareHero.Hotfix.Map;
+using champs3.Hotfix.Map;
 using UnityEditor.Callbacks;
 using Object = UnityEngine.Object;
 
@@ -443,7 +443,7 @@ class Table
 
 public class ExcelGenerateConfig
 {
-    public string ScriptPath = "Scripts/SquareHero/Hotfix/Generate/ExcelModel/";
-    public string NameSpace = "SquareHero.Hotfix.Generate";
+    public string ScriptPath = "Scripts/champs3/Hotfix/Generate/ExcelModel/";
+    public string NameSpace = "champs3.Hotfix.Generate";
     public string AssetSavePath = "Bundles/Excel/";
 }

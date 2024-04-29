@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b3f0dc67b06194cb2019b70c03d5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashScene: Assets/Scenes/SquareHeroSplash.unity
+  splashScene: Assets/Scenes/Champs3Splash.unity
   versionCheckScene: Assets/Scenes/CheckVersionScene.unity
   Platform: 17
 --- !u!1 &1994337848

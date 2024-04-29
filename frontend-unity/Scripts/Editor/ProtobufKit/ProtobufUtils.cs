@@ -326,8 +326,8 @@ namespace Editor.ProtobufKit
 
     public class ProtobufImportConfig
     {
-        public string ScriptPath = "/Scripts/SquareHero/Hotfix/Generate/Messages";
-        public string NameSpace = "SquareHero.Hotfix.Generate";
+        public string ScriptPath = "/Scripts/champs3/Hotfix/Generate/Messages";
+        public string NameSpace = "champs3.Hotfix.Generate";
 
         public static ProtobufImportConfig Load()
         {

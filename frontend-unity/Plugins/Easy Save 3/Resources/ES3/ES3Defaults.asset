@@ -50,9 +50,8 @@ MonoBehaviour:
     - QFramework
     - QFramework.CoreKit
     - ResKit
-    - Runx.Test
+    - champs3.Test
     - sc.stylizedwater2.runtime
-    - SquareHero.Core
     - StreamingAssetsHelper
     - Tests
     - UIKit

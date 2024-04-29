@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using SquareHero.Hotfix;
-using SquareHero.Hotfix.GameLogic;
-using SquareHero.Hotfix.Map;
+using champs3.Hotfix;
+using champs3.Hotfix.GameLogic;
+using champs3.Hotfix.Map;
 using UnityEngine;
 
 public class LevelTest : MonoBehaviour

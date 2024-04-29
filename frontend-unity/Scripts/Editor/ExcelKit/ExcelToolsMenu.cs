@@ -17,7 +17,7 @@ public static class ExcelToolsMenu
     public static void ExportMapData()
     {
         string separator = Path.DirectorySeparatorChar.ToString();
-        string path = EditorUtility.OpenFolderPanel("请选择要导出的目录", "../../squarehero-config/", "");
+        string path = EditorUtility.OpenFolderPanel("请选择要导出的目录", "../../champs3-config/", "");
         
         
         MapDataExporter.ExportMapData(path);

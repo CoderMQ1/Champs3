@@ -19,12 +19,12 @@ MonoBehaviour:
     From: 0
     NameToFullName: []
     BindInfos: []
-    ScriptsFolder: Assets/Scripts/SquareHero/Hotfix/UI/SubPanel
+    ScriptsFolder: Assets/Scripts/Champs3/Hotfix/UI/SubPanel
     ClassName: NotNftPanel
-    Namespace: SquareHero.Hotfix
-    MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace SquareHero.Hotfix\r\n{\r\n\tpublic
+    Namespace: Champs3.Hotfix
+    MainCode: "using UnityEngine;\r\nusing QFramework;\r\n\r\nnamespace Champs3.Hotfix\r\n{\r\n\tpublic
       partial class NotNftPanel : ViewController\r\n\t{\r\n\t\tvoid Start()\r\n\t\t{\r\n\t\t\t//
       Code Here\r\n\t\t}\r\n\t}\r\n}\r\n"
     DesignerCode: "// Generate Id:cbc28b2e-c76e-407b-84d0-c8e228fa8c99\r\nusing UnityEngine;\r\n\r\nnamespace
-      SquareHero.Hotfix\r\n{\r\n\tpublic partial class NotNftPanel\r\n\t{\r\n\r\n\t\tpublic
+      Champs3.Hotfix\r\n{\r\n\tpublic partial class NotNftPanel\r\n\t{\r\n\r\n\t\tpublic
       UnityEngine.UI.Image Bg;\r\n\r\n\t\tpublic UnityEngine.UI.Button GoBtn;\r\n\r\n\t}\r\n}\r\n"

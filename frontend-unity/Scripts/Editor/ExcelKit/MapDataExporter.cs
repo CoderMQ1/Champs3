@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using OfficeOpenXml;
-using SquareHero.Hotfix.Map;
+using champs3.Hotfix.Map;
 using UnityEditor;
 using UnityEngine;
 
